@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCaml BabylonJS</title>
+    <style>
+      body {
+        margin: 0px;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #renderCanvas {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="renderCanvas"></canvas>
+    <!-- This path is relative to the _build/default directory  -->
+    <script type="module" src="./output/src/App.js"></script>
+  </body>
+</html>

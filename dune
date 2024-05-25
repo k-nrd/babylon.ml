@@ -1,0 +1,27 @@
+(dirs :standard \ node_modules)
+
+(alias
+ (name all)
+ (deps
+  (alias_rec vite)))
+
+(rule
+ (alias vite)
+ (targets
+  (dir dist))
+ (deps
+  (alias_rec ocaml_babylonjs)
+  (:vite ./vite.config.js)
+  (:index_html ./index.html))
+ (action
+  (system "../../node_modules/.bin/vite build"))
+ (mode
+  (promote (until-clean))))
+
+(melange.emit
+ (target output)
+ (alias ocaml_babylonjs)
+ (libraries app melange.belt)
+ (preprocess
+  (pps melange.ppx))
+ (module_systems es6))

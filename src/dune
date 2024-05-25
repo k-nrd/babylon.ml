@@ -1,0 +1,9 @@
+; https://dune.readthedocs.io/en/stable/melange.html#melange-emit
+(include_subdirs qualified)
+
+(library
+ (name app)
+ (modes melange)
+ (libraries melange.js melange.dom)
+ (preprocess
+  (pps melange.ppx)))

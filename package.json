@@ -1,0 +1,19 @@
+{
+  "name": "melange-opam-template",
+  "scripts": {
+    "build": "dune build",
+    "dev": "dune build && concurrently 'npm:vite-dev' 'npm:dune-watch'",
+    "dune-watch": "dune build -w",
+    "serve": "dune build && vite preview",
+    "vite-dev": "vite _build/default"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "concurrently": "^8.2.2",
+    "vite": "^5.2.11",
+    "vite-plugin-melange": "^2.3.0"
+  },
+  "dependencies": {
+    "babylonjs": "^7.8.0"
+  }
+}
